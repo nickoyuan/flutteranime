@@ -18,17 +18,17 @@ with SingleTickerProviderStateMixin{
 
   List<ContentView> contentViews = [
     ContentView(
-      tab: CustomTab(title: 'Home'),
+      tab: CustomTab(title: 'Hot'),
       content: HomeView(),
     ),
-    // ContentView(
-    //   tab: CustomTab(title: 'About'),
-    //   content: HomeView(),
-    // ),
-    // ContentView(
-    //   tab: CustomTab(title: 'Support Us'),
-    //   content: HomeView(),
-    // )
+    ContentView(
+      tab: CustomTab(title: 'Trending'),
+      content: HomeView(),
+    ),
+    ContentView(
+      tab: CustomTab(title: 'New'),
+      content: HomeView(),
+    )
   ];
   late TabController tabController;
 
@@ -47,24 +47,12 @@ with SingleTickerProviderStateMixin{
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Column(children: [
-          Row(
-            children: [
-              Text(
-                "For those too lazy to type",
-                overflow: TextOverflow.visible,
-                style: const TextStyle(
-                    fontSize: 25, color: Colors.white
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(left: 20, right: 10),
-                child: Icon(
-                  Icons.keyboard,
-                  size: 40,
-                  color: Colors.white,
-                ), // icon is 48px widget.
-              ),
-            ],
+          Text(
+            "For those too lazy to type",
+            overflow: TextOverflow.visible,
+            style: const TextStyle(
+                fontSize: 25, color: Colors.white
+            ),
           ),
           Text(
             "Quick Find",
@@ -76,6 +64,7 @@ with SingleTickerProviderStateMixin{
             ),
           )
         ],),
+        SizedBox(height: 50,),
         Container(
           height: screenHeight * 0.05,
           child: CustomTabBar(

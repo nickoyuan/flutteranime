@@ -9,11 +9,7 @@ class CustomTabBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
-    double tabBarScaling = screenWidth > 1400
-        ? 0.21
-        : screenWidth > 1100
-            ? 0.3
-            : 0.4;
+    double tabBarScaling = screenWidth > 1400 ? 0.21 : (screenWidth > 1100 ? 0.3 : 0.8);
     return Padding(
       padding: EdgeInsets.only(right: screenWidth * 0.05),
       child: Container(
